@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NEO3D — Entre em contato conosco para iniciar seu projeto de impressão 3D personalizado.">
+    <title>NEO3D | Contato</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-dark">
+
+    <!-- ─── Header (Dark) ─── -->
+    <header class="header header--dark" id="header">
+        <a href="index.html" class="header__logo">NEO3D</a>
+
+        <nav class="header__nav" id="desktopNav">
+            <a href="index.html">HOME</a>
+            <a href="projetos.html">PROJETOS</a>
+            <a href="sobre.html">SOBRE</a>
+            <a href="contato.html" class="active">CONTATO</a>
+        </nav>
+
+        <div class="header__right">
+            <button class="header__cta" onclick="window.location.href='contato.html'">SEU PROJETO AQUI</button>
+            <div class="header__hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ─── Mobile Menu Overlay ─── -->
+    <div class="menu-overlay" id="menuOverlay">
+        <a href="index.html">Home</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+    </div>
+
+    <!-- ─── Contact Content ─── -->
+    <main class="contact-page">
+        <div class="reveal">
+            <h1>Fale<br>conosco</h1>
+            <p class="subtitle">
+                Tem um projeto em mente? Preencha o formulário abaixo ou 
+                agende uma reunião conosco. Cada peça começa com uma conversa.
+            </p>
+        </div>
+
+        <form class="reveal" id="contactForm" onsubmit="return false;">
+            <div class="form-group">
+                <label for="name">QUAL É O SEU NOME?</label>
+                <input type="text" id="name" placeholder="Seu nome completo" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">QUAL É O SEU E-MAIL?</label>
+                <input type="email" id="email" placeholder="seu@email.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="project-type">TIPO DE PROJETO</label>
+                <input type="text" id="project-type" placeholder="Ex: Peça decorativa, protótipo funcional, maquete...">
+            </div>
+
+            <div class="form-group">
+                <label for="message">DESCREVA SEU PROJETO EM ALGUMAS LINHAS</label>
+                <textarea id="message" placeholder="Conte-nos sobre sua ideia, dimensões desejadas, material preferido..." required></textarea>
+            </div>
+
+            <button type="submit" class="form-submit">ENVIAR MENSAGEM</button>
+        </form>
+    </main>
+
+    <!-- ─── Footer Framing ─── -->
+    <div class="footer-frame">
+        <span class="footer-frame__text footer-frame__text--dark">NEO</span>
+        <span class="footer-frame__text footer-frame__text--dark">3D</span>
+    </div>
+
+    <!-- ─── Footer ─── -->
+    <footer class="footer">
+        © NEO3D 2026. Todos os direitos reservados.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

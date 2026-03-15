@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NEO3D — Loja de peças 3D premium. Criamos peças sob medida em impressão 3D com precisão e design de alto padrão.">
+    <title>NEO3D | Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ─── Header ─── -->
+    <header class="header" id="header">
+        <a href="index.html" class="header__logo">NEO3D</a>
+
+        <nav class="header__nav" id="desktopNav">
+            <a href="index.html" class="active">HOME</a>
+            <a href="projetos.html">PROJETOS</a>
+            <a href="sobre.html">SOBRE</a>
+            <a href="contato.html">CONTATO</a>
+        </nav>
+
+        <div class="header__right">
+            <button class="header__cta" onclick="window.location.href='contato.html'">SEU PROJETO AQUI</button>
+            <div class="header__hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ─── Mobile Menu Overlay ─── -->
+    <div class="menu-overlay" id="menuOverlay">
+        <a href="index.html">Home</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+    </div>
+
+    <!-- ─── Hero Section — Infinite Carousel ─── -->
+    <section class="hero">
+        <div class="hero__gallery" id="heroGallery">
+            <div class="hero__track" id="heroTrack">
+                <div class="hero__item">
+                    <div class="hero__item-img">
+                        <img src="assets/images/piece-1.png" alt="Peça Geométrica Arquitetural">
+                    </div>
+                    <div class="hero__item-info">
+                        <span class="hero__item-title">Escultura Geométrica</span>
+                        <span class="hero__item-arrow">→</span>
+                    </div>
+                </div>
+                <div class="hero__item">
+                    <div class="hero__item-img">
+                        <img src="assets/images/piece-2.png" alt="Engrenagem Mecânica 3D">
+                    </div>
+                    <div class="hero__item-info">
+                        <span class="hero__item-title">Engrenagem Mecânica</span>
+                        <span class="hero__item-arrow">→</span>
+                    </div>
+                </div>
+                <div class="hero__item">
+                    <div class="hero__item-img">
+                        <img src="assets/images/piece-3.png" alt="Vaso Orgânico 3D">
+                    </div>
+                    <div class="hero__item-info">
+                        <span class="hero__item-title">Vaso Orgânico</span>
+                        <span class="hero__item-arrow">→</span>
+                    </div>
+                </div>
+                <div class="hero__item">
+                    <div class="hero__item-img">
+                        <img src="assets/images/piece-4.png" alt="Esfera Lattice">
+                    </div>
+                    <div class="hero__item-info">
+                        <span class="hero__item-title">Esfera Lattice</span>
+                        <span class="hero__item-arrow">→</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── Footer Framing ─── -->
+    <div class="footer-frame">
+        <span class="footer-frame__text">NEO</span>
+        <span class="footer-frame__text">3D</span>
+    </div>
+
+    <!-- ─── Footer ─── -->
+    <footer class="footer">
+        © NEO3D 2026. Todos os direitos reservados.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

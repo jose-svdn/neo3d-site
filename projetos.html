@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NEO3D — Galeria de projetos e peças 3D premium. Confira nosso portfólio de impressão 3D.">
+    <title>NEO3D | Projetos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ─── Header ─── -->
+    <header class="header" id="header">
+        <a href="index.html" class="header__logo">NEO3D</a>
+
+        <nav class="header__nav" id="desktopNav">
+            <a href="index.html">HOME</a>
+            <a href="projetos.html" class="active">PROJETOS</a>
+            <a href="sobre.html">SOBRE</a>
+            <a href="contato.html">CONTATO</a>
+        </nav>
+
+        <div class="header__right">
+            <button class="header__cta" onclick="window.location.href='contato.html'">SEU PROJETO AQUI</button>
+            <div class="header__hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ─── Mobile Menu Overlay ─── -->
+    <div class="menu-overlay" id="menuOverlay">
+        <a href="index.html">Home</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+    </div>
+
+    <!-- ─── Projects Page ─── -->
+    <main class="projects-page">
+
+        <!-- Controls -->
+        <div class="projects-controls">
+            <div class="projects-controls__toggle">
+                <button class="projects-controls__btn active" id="gridBtn">GRID</button>
+                <button class="projects-controls__btn" id="listBtn">LIST</button>
+            </div>
+            <button class="projects-controls__filter">
+                FILTERS <span>≡</span>
+            </button>
+        </div>
+
+        <!-- Grid -->
+        <div class="projects-grid" id="projectsGrid">
+
+            <div class="project-card reveal">
+                <div class="project-card__image-wrapper">
+                    <img src="assets/images/piece-1.png" alt="Escultura Geométrica Arquitetural">
+                </div>
+                <div class="project-card__meta">
+                    <span class="project-card__info">2026 — ARQUITETURA</span>
+                    <span class="project-card__title">ESCULTURA GEOMÉTRICA <span class="arrow">→</span></span>
+                </div>
+            </div>
+
+            <div class="project-card reveal">
+                <div class="project-card__image-wrapper">
+                    <img src="assets/images/piece-2.png" alt="Engrenagem Mecânica">
+                </div>
+                <div class="project-card__meta">
+                    <span class="project-card__info">2026 — MECÂNICA</span>
+                    <span class="project-card__title">ENGRENAGEM MECÂNICA <span class="arrow">→</span></span>
+                </div>
+            </div>
+
+            <div class="project-card reveal">
+                <div class="project-card__image-wrapper">
+                    <img src="assets/images/piece-3.png" alt="Vaso Orgânico">
+                </div>
+                <div class="project-card__meta">
+                    <span class="project-card__info">2025 — DECORAÇÃO</span>
+                    <span class="project-card__title">VASO ORGÂNICO <span class="arrow">→</span></span>
+                </div>
+            </div>
+
+            <div class="project-card reveal">
+                <div class="project-card__image-wrapper">
+                    <img src="assets/images/piece-4.png" alt="Esfera Lattice">
+                </div>
+                <div class="project-card__meta">
+                    <span class="project-card__info">2025 — DESIGN</span>
+                    <span class="project-card__title">ESFERA LATTICE <span class="arrow">→</span></span>
+                </div>
+            </div>
+
+            <div class="project-card reveal">
+                <div class="project-card__image-wrapper">
+                    <img src="assets/images/piece-5.png" alt="Maquete Arquitetônica">
+                </div>
+                <div class="project-card__meta">
+                    <span class="project-card__info">2025 — ARQUITETURA</span>
+                    <span class="project-card__title">MAQUETE ARQUITETÔNICA <span class="arrow">→</span></span>
+                </div>
+            </div>
+
+            <div class="project-card reveal">
+                <div class="project-card__image-wrapper">
+                    <img src="assets/images/piece-6.png" alt="Puzzle Artístico">
+                </div>
+                <div class="project-card__meta">
+                    <span class="project-card__info">2024 — EDUCAÇÃO</span>
+                    <span class="project-card__title">PUZZLE ARTÍSTICO <span class="arrow">→</span></span>
+                </div>
+            </div>
+
+            <div class="project-card reveal">
+                <div class="project-card__image-wrapper">
+                    <img src="assets/images/piece-7.png" alt="Dragão Figurino">
+                </div>
+                <div class="project-card__meta">
+                    <span class="project-card__info">2024 — COLECIONÁVEIS</span>
+                    <span class="project-card__title">DRAGÃO FIGURINO <span class="arrow">→</span></span>
+                </div>
+            </div>
+
+            <div class="project-card reveal">
+                <div class="project-card__image-wrapper">
+                    <img src="assets/images/piece-8.png" alt="Luminária Geométrica">
+                </div>
+                <div class="project-card__meta">
+                    <span class="project-card__info">2024 — ILUMINAÇÃO</span>
+                    <span class="project-card__title">LUMINÁRIA GEOMÉTRICA <span class="arrow">→</span></span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ─── Footer Framing ─── -->
+    <div class="footer-frame">
+        <span class="footer-frame__text">NEO</span>
+        <span class="footer-frame__text">3D</span>
+    </div>
+
+    <!-- ─── Footer ─── -->
+    <footer class="footer">
+        © NEO3D 2026. Todos os direitos reservados.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
