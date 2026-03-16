@@ -90,11 +90,16 @@ img {
 }
 
 .header__logo {
-    display: none; /* Hidden on desktop, shown on mobile */
-    font-weight: 900;
-    font-size: 28px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    position: absolute;
+    left: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 28px;
+    width: auto;
+    object-fit: contain;
 }
 
 .header__nav {
@@ -293,7 +298,7 @@ img {
 
 .hero__item {
     flex: 0 0 auto;
-    width: 380px;
+    width: 570px;
     position: relative;
     cursor: pointer;
 }
@@ -350,7 +355,7 @@ img {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     padding: 20px 30px;
     pointer-events: none;
     z-index: 10;
@@ -708,7 +713,7 @@ img {
     }
 
     .hero__item {
-        width: 35%;
+        width: 52.5%;
     }
 }
 
@@ -719,7 +724,7 @@ img {
     }
 
     .header__logo {
-        display: block;
+        position: static;
     }
 
     .header__nav {
@@ -751,7 +756,7 @@ img {
     }
 
     .hero__item {
-        width: 260px;
+        width: 390px;
     }
 
     /* Projects */
