@@ -283,9 +283,7 @@ img {
     animation: carousel-scroll 43s linear infinite;
 }
 
-.hero__gallery:hover .hero__track {
-    animation-play-state: paused;
-}
+/* Removed pause on hover as requested */
 
 @keyframes carousel-scroll {
     0% {
