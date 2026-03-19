@@ -34,9 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ── Page transition (fade-out before navigating) ──
     document.querySelectorAll('a[href]').forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
-            
+
             // Skip external links, anchors, and javascript
             if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto') || href.startsWith('javascript')) {
                 return;
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             e.preventDefault();
             document.body.classList.add('fade-out');
-            
+
             setTimeout(() => {
                 window.location.href = href;
             }, 400);
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ── Scroll Reveal (IntersectionObserver) ──
     const revealElements = document.querySelectorAll('.reveal');
-    
+
     if (revealElements.length > 0) {
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry, index) => {
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateHeader() {
         const currentScrollY = window.scrollY;
-        
+
         if (currentScrollY > lastScrollY && currentScrollY > 100) {
             header.style.transform = 'translateY(-100%)';
             header.style.transition = 'transform 400ms ease';
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
             header.style.transform = 'translateY(0)';
             header.style.transition = 'transform 400ms ease';
         }
-        
+
         lastScrollY = currentScrollY;
         ticking = false;
     }
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const originalText = submitBtn.textContent;
             submitBtn.textContent = 'MENSAGEM ENVIADA ✓';
             submitBtn.style.background = 'rgba(255, 255, 255, 0.15)';
-            
+
             setTimeout(() => {
                 submitBtn.textContent = originalText;
                 submitBtn.style.background = '';
@@ -150,15 +150,81 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ── Infinite hero carousel — clone items for seamless loop ──
+    // ── Infinite hero carousel — JS-driven for perfect hover sync ──
     const heroTrack = document.getElementById('heroTrack');
     if (heroTrack) {
+        let isDragging = false;
+        let startX = 0;
+        let preventClick = false;
+
         const items = heroTrack.querySelectorAll('.hero__item');
-        // Duplicate all items to fill the second half of the track
+        
+        // Add click listener to navigate to projects page
+        function setupItemClick(el) {
+            el.addEventListener('click', (e) => {
+                if (preventClick) return;
+                e.preventDefault();
+                document.body.classList.add('fade-out');
+                setTimeout(() => {
+                    window.location.href = 'projetos.html';
+                }, 400);
+            });
+        }
+
+        // Apply to original items
         items.forEach(item => {
+            setupItemClick(item);
+            
+            // Duplicate all items to fill the second half of the track
             const clone = item.cloneNode(true);
+            setupItemClick(clone);
             heroTrack.appendChild(clone);
         });
+
+        // JS-driven carousel: moves via style.left so hitboxes stay in sync
+        heroTrack.style.position = 'relative';
+        let offset = 0;
+        // Speed in pixels per second (adjust to taste)
+        const isMobile = window.innerWidth <= 768;
+        const speed = isMobile ? 80 : 60; // px/s
+        let lastTime = null;
+
+        function getHalfWidth() {
+            // Half the track = the width of the original items (first half)
+            const allItems = heroTrack.querySelectorAll('.hero__item');
+            const half = allItems.length / 2;
+            let w = 0;
+            const gap = 24; // matches CSS gap
+            for (let i = 0; i < half; i++) {
+                w += allItems[i].offsetWidth + gap;
+            }
+            return w;
+        }
+
+        let halfWidth = getHalfWidth();
+
+        // Recalculate on resize
+        window.addEventListener('resize', () => {
+            halfWidth = getHalfWidth();
+        });
+
+        function animateCarousel(timestamp) {
+            if (lastTime === null) lastTime = timestamp;
+            const delta = (timestamp - lastTime) / 1000; // seconds
+            lastTime = timestamp;
+
+            offset -= speed * delta;
+
+            // When we've scrolled past the first half, reset seamlessly
+            if (Math.abs(offset) >= halfWidth) {
+                offset += halfWidth;
+            }
+
+            heroTrack.style.left = offset + 'px';
+            requestAnimationFrame(animateCarousel);
+        }
+
+        requestAnimationFrame(animateCarousel);
     }
 
 });
