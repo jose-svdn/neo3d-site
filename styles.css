@@ -280,7 +280,7 @@ img {
     display: flex;
     gap: 24px;
     width: max-content;
-    animation: carousel-scroll 30s linear infinite;
+    animation: carousel-scroll 43s linear infinite;
 }
 
 .hero__gallery:hover .hero__track {
@@ -752,7 +752,7 @@ img {
     }
 
     .hero__track {
-        animation-duration: 20s;
+        animation-duration: 29s;
     }
 
     .hero__item {
