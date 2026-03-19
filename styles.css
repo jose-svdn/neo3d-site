@@ -612,6 +612,34 @@ img {
     margin-bottom: 16px;
 }
 
+.whatsapp-btn-large {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 2px solid var(--text-inverse);
+    transition: all var(--transition);
+    margin: 8px 0 24px 0;
+}
+
+.whatsapp-btn-large svg {
+    width: 32px;
+    height: 32px;
+    fill: var(--text-inverse);
+    transition: fill var(--transition);
+}
+
+.whatsapp-btn-large:hover {
+    background: var(--text-inverse);
+    transform: scale(1.05);
+}
+
+.whatsapp-btn-large:hover svg {
+    fill: var(--bg-dark);
+}
+
 .contact-page .subtitle {
     font-size: 16px;
     font-weight: 300;
