@@ -730,6 +730,211 @@ img {
     border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+/* ═══════════════════════════════
+   PROJECT DETAILS (Cargo Style)
+   ═══════════════════════════════ */
+
+.project-head {
+    padding: calc(var(--header-height) + 60px) 30px 60px;
+    background: var(--bg-light);
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-dark .project-head {
+    background: var(--bg-dark);
+    color: var(--text-inverse);
+}
+
+.project-head__link-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    opacity: 0.6;
+    transition: opacity var(--transition);
+}
+
+.project-head__link-back:hover {
+    opacity: 1;
+}
+
+.project-head__link-back svg {
+    width: 12px;
+    height: 12px;
+    fill: currentColor;
+    transform: rotate(180deg);
+}
+
+.project-head__container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.project-head__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+    width: 100%;
+    align-items: center;
+}
+
+.project-head__title {
+    font-size: clamp(40px, 6vw, 80px);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.project-head__meta {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 8px;
+}
+
+.project-head__image-wrapper {
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.project-head__image {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+
+/* Module Description */
+.module-description {
+    padding: 100px 30px;
+    background: var(--bg-light);
+}
+
+.page-dark .module-description {
+    background: var(--bg-dark);
+}
+
+.module-description__container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.module-description__grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 80px;
+}
+
+.module-description__text {
+    font-size: 20px;
+    line-height: 1.6;
+    font-weight: 300;
+    color: var(--text-primary);
+}
+
+.page-dark .module-description__text {
+    color: rgba(255,255,255,0.8);
+}
+
+.module-description__specs {
+    border-left: 1px solid rgba(0,0,0,0.1);
+    padding-left: 40px;
+}
+
+.page-dark .module-description__specs {
+    border-left-color: rgba(255,255,255,0.1);
+}
+
+.spec-item {
+    margin-bottom: 24px;
+}
+
+.spec-label {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.spec-value {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* Module Gallery */
+.module-gallery {
+    padding: 0 30px 100px;
+}
+
+.module-gallery__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.module-gallery__item {
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.module-gallery__item--full {
+    grid-column: span 2;
+}
+
+/* Similar Projects */
+.project-similar {
+    padding: 100px 30px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.page-dark .project-similar {
+    border-top-color: rgba(255,255,255,0.05);
+}
+
+.project-similar__title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+@media (max-width: 1024px) {
+    .project-head__grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .module-description__grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .module-description__specs {
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px solid rgba(0,0,0,0.1);
+        padding-top: 40px;
+    }
+}
+
 /* ═══════════════════════════════════════════
    RESPONSIVE — Mobile first breakpoints
    ═══════════════════════════════════════════ */

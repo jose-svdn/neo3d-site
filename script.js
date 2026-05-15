@@ -159,14 +159,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const items = heroTrack.querySelectorAll('.hero__item');
         
-        // Add click listener to navigate to projects page
+        // Add click listener to navigate to detail page
         function setupItemClick(el) {
             el.addEventListener('click', (e) => {
                 if (preventClick) return;
                 e.preventDefault();
+                const href = el.getAttribute('data-href') || 'projetos.html';
                 document.body.classList.add('fade-out');
                 setTimeout(() => {
-                    window.location.href = 'projetos.html';
+                    window.location.href = href;
                 }, 400);
             });
         }
